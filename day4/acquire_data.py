@@ -6,8 +6,9 @@
 # import helper classes for acquiring data from the Micro:bit
 import serialio
 
-comport = 'COM3' # Example Windows port
-# comport = '/dev/cu.usbmodem144102' # Example MacOS port
+# comport = 'COM3' # Example Windows port
+comport = '/dev/tty.usbmodem14102' # Example MacOS port
+# /dev/tty.usbmodem14102
 
 baudrate = 115200
 output_file = 'data1.csv'

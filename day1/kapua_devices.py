@@ -26,7 +26,8 @@ def list_devices(api_client, account_id):
 def add_devices(api_client, account_id, device_names):
     # Step 1
     # Get a DevicesApi instance from the swagger_client
-    <YOUR CODE HERE>
+    #<YOUR CODE HERE>
+    api_instance = swagger_client.DevicesApi(api_client)
 
     try:
         for device_name in device_names:
@@ -35,12 +36,18 @@ def add_devices(api_client, account_id, device_names):
             # Set client_id to the device_name
             # Set display_name to the device_name
             # Set other optional properties
-            <YOUR CODE HERE>
+            #<YOUR CODE HERE>
+            DeviceCreator = {
+                'clientId': device_name,
+                'displayName' : device_name,
+                'createBy' : 'Liang Faan' 
+            }
 
             # Step 3
             # Pass the DeviceCreator request to the DevicesApi instance’s device_create method
             # Use account_id as the scope_id
-            <YOUR CODE HERE>
+            # <YOUR CODE HERE>
+            api_response = api_instance.device_create(account_id, DeviceCreator)
 
             print(f'Created device: {api_response.display_name}')
 
